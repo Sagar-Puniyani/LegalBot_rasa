@@ -1,0 +1,72 @@
+version: "3.1"
+
+rules:
+
+  - rule: Ask a user type
+    steps:
+    - intent: greet
+    - action: utter_ask_user_type
+
+  - rule: Handle user type as owner
+    condition:
+      - slot_was_set:
+          - type_user: "owner"
+    steps:
+      - action: utter_acknowledge_owner
+
+  - rule: Handle user type as tenant
+    condition:
+      - slot_was_set:
+          - type_user: "tenant"
+    steps:
+      - action: utter_acknowledge_tenant
+
+  - rule: getting the information of the user
+    steps:
+      - intent: inform
+      - action: action_set_user_type
+      - action: action_acknowledge_user
+
+  - rule: Handle with the procedure intent registration 
+    steps:
+      - intent: registration
+      - action: utter_registration
+
+
+  - rule: Handle with the procedure intent as owner
+    condition:
+      - slot_was_set:
+          - type_user: "owner"
+    steps:
+      - action: action_acknowledge_user
+
+  - rule: Handle with the procedure intent as tenant
+    condition:
+      - slot_was_set:
+          - type_user: "tenant"
+    steps:
+      - action: action_acknowledge_user
+
+  - rule: Handle the charges intent
+    steps:
+      - intent: charges
+      - action: utter_charges
+  
+  - rule: Handle the rental_type intent
+    steps:
+      - intent: rental_type
+      - action: utter_rental_type
+
+
+  - rule: Handle the Consequences intent
+    steps:
+      - intent: Consequences
+      - action: utter_consequences
+
+      
+  - rule: Handle the e-stamp intent
+    steps:
+      - intent: e-stamp
+      - action: utter_e-stamp
+
+  

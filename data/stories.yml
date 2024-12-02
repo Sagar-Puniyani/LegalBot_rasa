@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+  - story: User greets and specifies ownership
+    steps:
+      - intent: greet
+      - action: utter_ask_user_type
+      - intent: inform
+        entities:
+          - type_user: "owner"
+      - action: action_set_user_type
+      - action: action_acknowledge_user
+
+  - story: User specifies their type as tenant
+    steps:
+      - intent: inform
+        entities:
+          - type_user: "tenant"
+      - action: action_set_user_type
+      - action: action_acknowledge_user
+
+  - story: User asks about registration procedure
+    steps:
+      - intent: procedure
+      - slot_was_set:
+          - type_user: "owner"
+      - action: utter_owner_procedure
+      - slot_was_set:
+          - type_user: "tenant"
+      - action: action_set_user_type
+      - action: utter_tenant_procedure
+
+  - story: User asks about registration charges
+    steps:
+      - intent: charges
+      - action: utter_charges
+
+  - story: User asks about rental types
+    steps:
+      - intent: rental_type
+      - action: utter_rental_type
+
+  - story: User asks about consequences of not paying stamp duty
+    steps:
+      - intent: consequences
+      - action: utter_consequences
+
+  - story: User asks about e-stamping process
+    steps:
+      - intent: e-stamp
+      - action: utter_e-stamp

@@ -1,0 +1,133 @@
+version: "3.1"
+
+intents:
+  - greet
+  - inform
+  - charges
+  - rental_type
+  - consequences
+  - e-stamp
+  - registration
+  - procedure
+  - goodbye
+
+entities:
+  - type_user
+
+slots:
+  type_user:
+    type: categorical
+    values:
+      - owner
+      - tenant
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        value: "owner"
+      - type: from_text
+        value: "tenant"
+
+responses:
+  utter_ask_user_type:
+    - text: "Are you an owner or a tenant?"
+
+  utter_acknowledge_owner:
+    - text: "Hi there, you are an owner of the property."
+
+  utter_acknowledge_tenant:
+    - text: "Hi there, you are a tenant and searching for property on lease."
+
+  utter_owner_procedure:
+    - text: |
+        For property registration, please follow these steps:
+        1. The original proof of ownership or title to property
+        2. Two passport size photos
+        3. Aadhar card or its receipt while applying for it is mandatory
+        4. ID proof – driving licence, voter’s ID, passport, etc.
+        5. The rental agreement printed on Stamp paper
+        6. DD of Rs.1100 towards registration charges
+
+  utter_tenant_procedure:
+    - text: |
+        For property registration, please follow these steps:
+        1. 2 passport size photos
+        2. Aadhar card or the receipt received while applying for it, if the person is an Indian.
+        3. If the person is a foreigner, then original passport is needed.
+        4. If the tenant is a company, then the person coming for the registration should bring a board resolution/authorisation letter from the company with mentioning the person’s right to register the lease, along with the company seal.
+        5. If one person represents another person for the registration, then the Power of Attorney deed should be brought.
+
+  utter_registration:
+    - text: |
+        In the National Capital Region (NCR), particularly in Delhi, the key difference in property registration lies in the 
+        stamp duty calculation based on gender, where male buyers typically pay a higher stamp duty rate (6%) compared to female
+        buyers (4%) for the same property value; additionally, the "Anywhere Registration" policy allows residents to register
+        their property at any sub-registrar office within Delhi, regardless of their location
+        
+        key points about property registration in NCR:
+          1. Gender-based stamp duty:
+            The primary distinction is the different stamp duty rates based on the buyer's gender, 
+            with females generally receiving a lower rate. 
+          2. Registration fee:
+            A standard registration fee of 1% of the property value is typically applied. 
+          3. "Anywhere Registration":
+            Delhi residents can now register their property at any sub-registrar office within the city, 
+            providing flexibility in choosing a convenient location
+
+  utter_charges:
+    - text: |
+        The registration charges for the property are as follows:
+      
+        1. Up to 4 years: 2% of average annual rent + ₹100 (security deposit).
+        2. 5-10 years: 5% of average annual rent; 10-20 years: 5% of double average annual rent.
+        Registration charges: ₹1100 (via Demand Draft).
+
+  utter_rental_type: 
+    - text: |
+        There are major 3 types rental Agreement in NCR:
+
+        1. 11-Month Rental: Tenant pays monthly rent, electricity, water, and maintenance charges; renewable after 11 months.
+        2. Long-Term Lease: No monthly rent; tenant pays a lump sum lease amount (refunded later). Tenant covers electricity, 
+           water, and maintenance charges; no interest on the lease amount.
+        3. Commercial Lease: Registration and Stamp Duty processes are the same as for residential rentals.
+
+  utter_consequences:
+    - text: |
+        There are some Consequences of not having proper registration of the property:
+        
+        1. Consequences of Not Paying Stamp Duty:
+        Using low-value Stamp paper to save costs can result in heavy fines. 
+        For example, Ashok rents his house to Mahesh on a Rs. 50 Stamp paper. 
+        When Mahesh stops paying rent, Ashok faces a Rs. 18,600 fine for underpaid Stamp Duty, 
+        instead of the proper Rs. 1860.
+
+        2. Consequences of Not Registering the Agreement:
+        An unregistered agreement holds no legal weight in court. 
+        For instance, Amit’s rental agreement with Vikas was stamped but not registered. 
+        When Vikas disputes the rent, the court rejects the unregistered document, and 
+        Amit loses the case due to lack of evidence.
+
+  utter_e-stamp:
+    - text: |
+        Delhi has dropped the conventional stamp paper systems and shifted entirely to the e-Stamping system operated by 
+        Stock Holding Corporation of India (SHCIL). If a person needs Stamp paper he can approach the e-Stamping vendors 
+        and purchase it from them. You need to provide your name and the purpose in the application form. The conventional 
+        Stamp papers are no longer used in Delhi.
+
+actions:
+  - action_set_user_type
+  - action_acknowledge_user
+  # - utter_ask_user_type
+  # - utter_acknowledge_owner
+  # - utter_acknowledge_tenant
+  # - utter_registration
+  # - utter_tenant_procedure
+  # - utter_owner_procedure
+  # - utter_charges
+  # - utter_rental_type
+  # - utter_consequences
+  # - utter_e-stamp
+
+
+# session_config:
+#   session_expiration_time: 60
+#   carry_over_slots_to_new_session: true

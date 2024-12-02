@@ -1,0 +1,208 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - hi there
+    - hello there
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - i have to go
+    - i will be back
+    - i am going
+    - i am leaving
+    - i am leaving now
+    - i am leaving soon
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - see you soon
+    - see you again
+    - see you later
+    - see you tomorrow
+    - see you again
+    - see you
+
+- intent: registration
+  examples: |
+    - register
+    - want to details of registration
+    - registration details
+    - How to register
+    - How can i register
+    - what is the registration process
+    - registration process
+    - registration details
+    - how many charges for registration
+    - how to do registration
+    - what is the cost of registration
+    - steps to complete registration
+    - how do I register for this
+    - is there a registration fee
+    - can you explain the registration steps
+    - when can I register
+    - where can I register
+    - what documents are required for registration
+    - what is the deadline for registration
+    - how long does the registration process take
+    - do I need to pay to register
+    - is registration open
+    - how do I submit my registration
+    - what are the requirements for registration
+    - can I register online
+    - where do I submit my registration
+    - is there a registration form to fill out
+    - how do I complete the registration form
+
+- intent: procedure
+  examples: |
+    - procedure
+    - what is the procedure
+    - how to do registration
+    - how many charges for rent
+    - what procedure should i follow
+    - what is the procedure for renting the property
+    - what to do for rental support
+    - what is the procedure for rental support
+    - what are the steps to register
+    - how do I apply for rental support
+    - what is the process for signing a lease
+    - how can I rent a property
+    - can you explain the process of property rental
+    - what is the procedure to apply for housing support
+    - how do I go about paying rent
+    - steps involved in renting a house
+    - how to apply for rental assistance
+    - what documents are needed for property rental
+    - how do I register for rental support
+    - what should I do to secure a rental property
+    - what is the process for renewing a lease
+    - how do I start the rental application process
+    - what are the required steps for renting a home
+    - how can I access rental support services
+    - what procedure do I need to follow to rent a property
+    - how to apply for financial assistance for rent
+    - what is the process for cancelling a lease
+
+- intent: charges
+  examples: |
+    - charges
+    - what are the charges
+    - how much are the charges
+    - what is the cost of e-stamp and rental support
+    - total estimated charges
+    - what are the charges for e-stamp and rental support
+    - how much will it cost
+    - what are the fees involved
+    - is there a service charge
+    - what is the price for rental support
+    - are there any hidden charges
+    - can you provide a breakdown of charges
+    - how much does the e-stamp cost
+    - what is the total cost for the process
+    - are there any additional fees
+    - how much do I need to pay
+    - what is the processing fee
+    - what are the rental support fees
+    - is there a charge for registration
+    - how are the charges calculated
+    - total registration fee
+    - how much is the registration fee
+    - what is the total cost of registration
+    - what are the charges for registration
+
+- intent: rental_type
+  examples: |
+    - house renting for 11 months
+    - Long term rental
+    - commercial rental
+    - commercial property Lease
+    - short term rental
+    - rental for 6 months
+    - yearly rental agreement
+    - 1 year rental contract
+    - short-term lease agreement
+    - commercial space rent
+    - office space rental
+    - property lease for business
+    - apartment for rent
+    - house for rent
+    - rental for office use
+    - monthly rental agreement
+    - rent for commercial property
+    - leasing property for business purposes
+    - apartment lease for 1 year
+    - lease for residential purpose
+    - long-term property rental
+    - flexible lease agreement
+    - renat type 
+    - rental
+    - lease
+    - lease for 6 months
+    - lease for 11 months
+
+- intent: Consequences
+  examples: |
+    - Consequences
+    - what are the Consequences of not paying the charges ?
+    - what are the Consequences of not paying the registration fee ?
+    - what are the Consequences of not paying the rental support fee
+    - Consequences Of Not Paying The Stamp Duty
+    - what are the Consequences of not paying the registration fee ?
+    - Consequences Of Not Registering
+
+- intent: e-stamp 
+  examples: |
+    - e-stamp
+    - e stamp
+    - e-stamp registration
+    - e stamp registration
+    - what is e-stamp
+    - what is e-stamp registration
+    - what is e-stamp registration fee
+    - what is e-stamp registration process
+    - what is e-stamp registration charges
+    - what is e-stamp registration fee
+    - what is e-stamp registration process
+    - what is e-stamp registration charges
+    - what is the importance of e-stamp registration
+    - what is the purpose of e-stamp registration
+    - is in NCR required for e-stamp registration
+    - is e-stamp registration mandatory
+    - is e-stamp done be required
+    - is e-stamp can be done online
+
+- intent: inform
+  examples: |
+    - I am an [owner](type_user)
+    - I own a property as an [owner](type_user)
+    - I am a property [owner](type_user)
+    - I want to lease my property as an [owner](type_user)
+    - I am a [tenant](type_user)
+    - I want to rent a property as a [tenant](type_user)
+    - I am looking to rent as a [tenant](type_user)
+    - I need a property on lease as a [tenant](type_user)
+    - I want a property on rent as a [tenant](type_user)
+    - I am renting a property as a [tenant](type_user)
+    - I want to lease a property as an [owner](type_user)
